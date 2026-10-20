@@ -3,13 +3,11 @@ import gradio as gr
 import numpy as np
 from ultralytics import YOLO
 
-# 1. تحميل نموذج YOLO (سيتم تحميله تلقائياً عند تشغيل المساحة)
+# 1. تحميل نموذج YOLO نسخة ال Pytorch
 model = YOLO("yolov8n.pt")
-
+# استدعاء الدالة 
 def process_gate_video(video_path):
-    """
-    دالة لمعالجة الفيديو، تتبع الأجسام عبر YOLO، وعد الأشخاص العابرين للبوابة.
-    """
+   
     if video_path is None:
         return None, "الرجاء رفع ملف فيديو صالح أولاً."
 
